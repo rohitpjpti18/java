@@ -25,4 +25,22 @@ public class LicenseServiceController {
             .withLicenseType("Seat")
             .withOrganizationId("TestOrg");
     }
+
+
+
+    @RequestMapping(value="{licenseId}",method = RequestMethod.PUT)
+    public String updateLicenses( @PathVariable("licenseId") String licenseId) {
+        return String.format("This is the put");
+    }
+
+    @RequestMapping(value="{licenseId}",method = RequestMethod.POST)
+    public String saveLicenses( @PathVariable("licenseId") String licenseId) {
+        return String.format("This is the post");
+    }
+
+    @RequestMapping(value="{licenseId}",method = RequestMethod.DELETE)
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public String deleteLicenses( @PathVariable("licenseId") String licenseId) {
+        return String.format("This is the Delete");
+    }
 }

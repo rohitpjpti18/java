@@ -23,6 +23,7 @@
  
         <!-- Annotated entity classes -->
         <mapping class="com.dbjava.tutorial.AppUser"/>
+        <mapping class="com.dbjava.tutorial.Author"/>
         
     </session-factory>
 </hibernate-configuration>

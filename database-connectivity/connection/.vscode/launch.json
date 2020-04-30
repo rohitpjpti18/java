@@ -8,6 +8,13 @@
             "type": "java",
             "name": "CodeLens (Launch) - App",
             "request": "launch",
+            "mainClass": "src.App",
+            "projectName": "connection_c346536b"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - App",
+            "request": "launch",
             "mainClass": "App",
             "projectName": "connection_c346536b"
         },

@@ -1,7 +1,13 @@
+package app;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+/**
+ *
+ * @author postgresqltutorial.com
+ */
 public class App{
 
     private final String url = "jdbc:postgresql://localhost:5432/rohit";
@@ -28,7 +34,7 @@ public class App{
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String args[]) {
         App app = new App();
         app.connect();
     }

@@ -5,7 +5,6 @@ import javax.validation.Valid;
 import com.sunhome.product.dto.ProductDto;
 import com.sunhome.product.models.Product;
 import com.sunhome.product.service.IProductService;
-import com.sunhome.product.service.ProductService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -30,13 +29,14 @@ public class ProductController {
     } 
 
     @GetMapping(value="/{productId}")
-    public Product getProduct(@PathVariable long id){
+    public Product getProduct(@PathVariable("productId") long id){
         return productService.findProductById(id);
     }
 
     Product convert(ProductDto dto) {
         Product product = new Product();
         product.setName(dto.getName());
+        product.setPrice(dto.getPrice());
 
         return product;
     }

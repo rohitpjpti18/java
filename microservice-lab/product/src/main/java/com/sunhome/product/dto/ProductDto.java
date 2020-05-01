@@ -6,7 +6,16 @@ import javax.persistence.Id;
 
 public class ProductDto {
     private String name;
+    private Double price;
 
+
+    public Double getPrice() {
+        return this.price;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
+    }
 
     public String getName() {
         return this.name;

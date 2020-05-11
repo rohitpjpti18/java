@@ -1,25 +1,25 @@
 
 
-class Box {
+class Box1 {
     double width;
     double height;
     double depth;
 
 
-    Box() {
+    Box1() {
         System.out.println("Constructing Box");
         this.width = 10;
         this.height = 10;
         this.depth = 10;
     }
 
-    Box(double s) {
+    Box1(double s) {
         this.width = s;
         this.height = s;
         this.depth = s;
     }
 
-    Box(double w, double h, double d){
+    Box1(double w, double h, double d){
         this.width = w;
         this.height = h;
         this.depth = d;

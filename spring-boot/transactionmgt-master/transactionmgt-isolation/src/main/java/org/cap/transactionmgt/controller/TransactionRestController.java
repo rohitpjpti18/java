@@ -10,7 +10,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.bind.annotation.CrossOrigin;
 
 import java.util.*;
 import org.slf4j.Logger;
@@ -51,24 +50,26 @@ public class TransactionRestController {
    }
    
    @GetMapping("/getbyid/{id}")
-   public ResponseEntity<WalletTransaction>findTransactionById( @PathVariable("id") @Min(1)  int id){
-	   WalletTransaction transaction= service.findById(id);
-      ResponseEntity<WalletTransaction>response=new ResponseEntity<>(transaction,HttpStatus.OK);
-      return response;
+   public ResponseEntity<WalletTransaction>findTransactionById( @PathVariable("id") @Min(1)  String id){
+        int eyed = Integer.parseInt(id);
+        System.out.println(eyed);
+        WalletTransaction transaction= service.findById(eyed);
+        ResponseEntity<WalletTransaction>response=new ResponseEntity<>(transaction,HttpStatus.OK);
+        return response;
    }
    
   
    @GetMapping
    @ResponseStatus(HttpStatus.OK)
    public ResponseEntity<List<WalletTransaction>>fetchAll(){
-       List<WalletTransaction>transaction=service.fetchAll();
-       ResponseEntity<List<WalletTransaction>>response=new ResponseEntity<>(transaction,HttpStatus.OK);
-       return response;
+        List<WalletTransaction>transaction=service.fetchAll();
+        ResponseEntity<List<WalletTransaction>>response=new ResponseEntity<>(transaction,HttpStatus.OK);
+        return response;
    }
     
     @ExceptionHandler(TransactionNotFoundException.class)
     public ResponseEntity<String>handleTransactionNotFound(TransactionNotFoundException ex){
-        Log.error("Transaction not found exception",ex);
+        Log.error("Transaction not found exception", ex);
         String msg=ex.getMessage();
         ResponseEntity<String>response=new ResponseEntity<>(msg,HttpStatus.NOT_FOUND);
         return response;

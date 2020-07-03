@@ -17,8 +17,8 @@ class Exercise1{
         Scanner in = new Scanner(System.in);
         String s = in.nextLine();
         in.close();
+
         
         System.out.println(vowelOrConsonent(s.charAt(0)));
-        
     }
 }
